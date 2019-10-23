@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bitmap"
-    tools:context=".Main3Activity">
+    tools:context=".Login">
 
     <ImageButton
         android:id="@+id/loginback"
@@ -35,8 +35,9 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="283dp"
         android:layout_toEndOf="@+id/back"
-        android:drawableStart="@drawable/ic_person_black_24dp"
-        android:hint="Username"
+        android:drawableStart="@drawable/ic_email_black_24dp"
+        android:hint="Email address"
+        android:inputType="textEmailAddress"
         android:padding="10dp" />
 
     <EditText

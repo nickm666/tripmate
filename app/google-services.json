@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "299600163099",
+    "firebase_url": "https://mylogin-dabf4.firebaseio.com",
+    "project_id": "mylogin-dabf4",
+    "storage_bucket": "mylogin-dabf4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299600163099:android:2dc55d779032f4b087a3be",
+        "android_client_info": {
+          "package_name": "cluo29.github.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299600163099-0r62kjnnrgpvc45hplr2hbke8qd1r901.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo7fQ0DwuXFvJtf8fx7kXPBYetBLiwbdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299600163099-0r62kjnnrgpvc45hplr2hbke8qd1r901.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

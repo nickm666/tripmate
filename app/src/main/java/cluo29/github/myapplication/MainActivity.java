@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void openjoinactivity(){
-        Intent intent = new Intent(this,Main2Activity.class);
+        Intent intent = new Intent(this,Register.class);
         startActivity(intent);
     }
     public void openloginactivity(){
-        Intent intent = new Intent(this,Main3Activity.class);
+        Intent intent = new Intent(this,Login.class);
         startActivity(intent);
     }
 
