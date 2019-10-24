@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "299600163099-r96rgrb8p4u2vbd7msvv504cgogj12g1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cluo29.github.myapplication",
+            "certificate_hash": "7f91bc3ba72ad0195d4ae65848d4763ce6cd3fb6"
+          }
+        },
+        {
           "client_id": "299600163099-0r62kjnnrgpvc45hplr2hbke8qd1r901.apps.googleusercontent.com",
           "client_type": 3
         }

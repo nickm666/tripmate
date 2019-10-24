@@ -2,9 +2,9 @@ package cluo29.github.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +14,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import android.widget.Toast;
 import android.text.TextUtils;
 
@@ -22,6 +30,7 @@ public class Register extends AppCompatActivity {
     private Button register;
     EditText inputusername,inputemail,inputpassword;
     private FirebaseAuth auth;
+    DatabaseReference mydbref = FirebaseDatabase.getInstance().getReference("Users");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +50,9 @@ public class Register extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = inputemail.getText().toString().trim();
-                String username = inputusername.getText().toString().trim();
-                String password = inputpassword.getText().toString().trim();
+                final String email = inputemail.getText().toString().trim();
+                final String username = inputusername.getText().toString().trim();
+                final String password = inputpassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -70,8 +79,12 @@ public class Register extends AppCompatActivity {
                             Toast.makeText(Register.this,"SignUp Unsuccessful, Please Try Again",Toast.LENGTH_SHORT).show();
                         }
                         else {
+                            String id = mydbref.push().getKey();
+                            Myusers nobody = new Myusers(id,username,email);
+                            mydbref.setValue(nobody);
                             Toast.makeText(Register.this,"SignUp Successful ",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register.this,Profile.class));
+                            finish();
                         }
                     }
                 });
@@ -79,6 +92,8 @@ public class Register extends AppCompatActivity {
 
         });
     }
+
+
     public void backtomain(){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);

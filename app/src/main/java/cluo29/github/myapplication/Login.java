@@ -90,12 +90,6 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
-    }
-
     public void backtomain(){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);

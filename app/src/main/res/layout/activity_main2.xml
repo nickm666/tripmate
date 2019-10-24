@@ -74,6 +74,7 @@
         android:layout_marginTop="284dp"
         android:layout_toEndOf="@+id/back"
         android:hint="Username"
+        android:inputType="textPersonName"
         android:padding="10dp" />
 
 
