@@ -50,15 +50,18 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds: dataSnapshot.getChildren()) {
-                    if(ds.getValue()!=null) {
-                        Myusers myu = new Myusers();
-                        myu.setUserName(ds.getValue(Myusers.class).getUserName());
-                        myu.setUserEmail(ds.getValue(Myusers.class).getUserEmail());
-                        myu.setUserId(ds.getValue(Myusers.class).getUserId());
-                        if (myu.getUserName() != null && myu.getUserEmail().toLowerCase().equals(themail)) {
-                            uname.setText(myu.getUserName());
+                        if(ds.getValue()!=null) {
+                            Myusers myu = new Myusers();
+                            //Log.d("myu",ds.getValue().toString());
+                            myu.setUserName(ds.getValue(Myusers.class).getUserName());
+                            myu.setUserEmail(ds.getValue(Myusers.class).getUserEmail());
+                            myu.setUserId(ds.getValue(Myusers.class).getUserId());
+                            //Log.d("1234",ds.child("Users").getValue(Myusers.class).toString());
+                            if (myu.getUserName() != null && myu.getUserEmail().toLowerCase().equals(themail)) {
+                                uname.setText(myu.getUserName());
+                            }
                         }
-                    }
+
                 }
 
             }

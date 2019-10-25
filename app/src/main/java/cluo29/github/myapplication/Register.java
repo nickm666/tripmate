@@ -81,7 +81,7 @@ public class Register extends AppCompatActivity {
                         else {
                             String id = mydbref.push().getKey();
                             Myusers nobody = new Myusers(id,username,email);
-                            mydbref.setValue(nobody);
+                            mydbref.child(id).setValue(nobody);
                             Toast.makeText(Register.this,"SignUp Successful ",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register.this,Profile.class));
                             finish();
