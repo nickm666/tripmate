@@ -79,9 +79,14 @@ public class Register extends AppCompatActivity {
                             Toast.makeText(Register.this,"SignUp Unsuccessful, Please Try Again",Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            String id = mydbref.push().getKey();
+                            FirebaseUser theu = FirebaseAuth.getInstance().getCurrentUser();
+                            String id = "";
+                            if(theu != null) {
+                                id = theu.getUid();
+                            }
                             Myusers nobody = new Myusers(id,username,email);
                             mydbref.child(id).setValue(nobody);
+
                             Toast.makeText(Register.this,"SignUp Successful ",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register.this,Profile.class));
                             finish();
