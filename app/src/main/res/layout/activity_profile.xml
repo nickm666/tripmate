@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#F1EDED"
+    android:background="@drawable/overlayback"
     tools:context=".Profile">
 
     <androidx.appcompat.widget.Toolbar
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="74dp"
         android:layout_marginBottom="0dp"
-        android:background="@color/colorPrimary">
+        android:background="#0F7979">
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -25,7 +25,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="74dp"
         android:layout_marginEnd="0dp"
-        android:background="#673AB7"
+        android:background="#5F5FF5"
         android:orientation="horizontal">
 
         <ImageView
